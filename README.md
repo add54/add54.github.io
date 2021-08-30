@@ -24,15 +24,15 @@ pip install fastapi-csv
 
 ### 1. From the command line
 
-There's a simple CSV file in this repo for testing ([people.csv](people.csv)). To start
+There's a simple CSV file in this repo for testing ([questions.csv](people.csv)). To start
 an API for it, run one of:
 
 ```bash
 # from file
-fastapi-csv people.csv
+fastapi-csv questions.csv
 
 # directly from URL
-fastapi-csv https://raw.githubusercontent.com/jrieke/fastapi-csv/main/people.csv
+fastapi-csv https://raw.githubusercontent.com/add54/fastapi-csv/main/questions.csv
 ```
 
 Either command should start a fastapi instance, which has auto-generated endpoints and 
@@ -40,15 +40,10 @@ query parameters based on the CSV file. Here, the API has an endpoint `/people`
 (same name as the file), which can be queried using the CSV's column names, e.g. you can 
 do:
 
-- `/people?first_name=Rachel`
-- `/people?last_name=Johnson&age=48`
    
 Additionally, fastapi-csv creates some convenience query parameters for specific data 
 types, e.g. 
 
-- `/people&age_greaterThan=18` (for int/float)
-- `/people&age_lessThanEqual=18` (for int/float)
-- `/people&first_name_contains=ach` (for string, watch out: this one is case sensitive!)
 
 Check out the API docs for more information and an interactive demo, they should be at
 <http://127.0.0.1:8000/docs>
